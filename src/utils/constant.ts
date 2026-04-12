@@ -3,13 +3,16 @@ import { NavItem, ProjectItem, ExperienceItem, FormField, ContactInfo, SocialLin
 
 export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
 export const BRAND_NAME="SDE"
-const EXPERIENCE="4+ years experirence"
+
 
 export const MY_URLS={
   GITHUB_URL:"https://github.com/kigra58",
   LINKEDIN_URL:"https://www.linkedin.com/in/krishna-gautam-5486081b1/",
   EMAIL:"krishna.gautam5899@gmail.com",
-  RESUME:"https://drive.google.com/file/d/1eZT78gyzCHDXWVfQhT9tE7PPl2HjUlzb/view?usp=drivesdk"
+  RESUME:"https://drive.google.com/file/d/1eZT78gyzCHDXWVfQhT9tE7PPl2HjUlzb/view?usp=drivesdk",
+  NAME:"Krishna Gautam",
+  EXPERIENCE:"4+ years experirence",
+  PROFILE:"Software Engineer"
 }
 
 export const NAVIGATION_ITEMS: NavItem[] = [
@@ -121,11 +124,11 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   {
     category: 'Cloud & DevOps',
     title: 'Serverless API Gateway',
-    timeline: '2023 - Cloud Development',
+    timeline: '2022 - Cloud Development',
     hasBorder: true,
     description: 'Designed and implemented a serverless API gateway with automated deployment, monitoring, and cost optimization.',
     features: [
-      '60% reduction in infrastructure costs',
+      '40% reduction in infrastructure costs',
       'Auto-scaling based on traffic patterns',
       'Automated testing and deployment pipelines',
       'Real-time performance monitoring'
@@ -149,13 +152,45 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     techStack: ['Python', 'TensorFlow', 'OpenCV', 'Tesseract OCR', 'React Native', 'Firebase', 'Google Cloud Vision', 'Node.js', 'MongoDB'],
     image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop',
     link: '#'
-  }
+  },
+  {
+    category: 'Real Estate',
+    title: 'Property Review Platform',
+    timeline: '2022 - Full-Stack Development',
+    hasBorder: true,
+    description: 'Comprehensive property review platform connecting tenants and landlords with rating systems, rental management, and dispute resolution features.',
+    features: [
+      'Dual-sided rating system for tenants and landlords',
+      'Automated rent payment tracking and reminders',
+      'Property maintenance request management',
+      'Document storage with e-signature capabilities'
+    ],
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'REST APIs', 'Stripe', 'AWS S3', 'JWT Auth', 'Socket.io', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Social & Dating',
+    title: 'Modern Dating App',
+    timeline: '2022 - Mobile Development',
+    hasBorder: true,
+    description: 'Location-based dating application with AI-powered matching, real-time chat, and advanced privacy features for meaningful connections.',
+    features: [
+      'AI-powered compatibility matching algorithm',
+      'Real-time messaging with read receipts',
+      'Location-based user discovery with radius filters',
+      'Video calling with end-to-end encryption'
+    ],
+    techStack: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Redis', 'JWT Auth', 'TensorFlow Lite', 'Twilio', 'AWS', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
+    link: '#'
+  },
 ];
 
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     position: 'left',
-    title: 'Software Engineer',
+    title: MY_URLS.PROFILE,
     company: 'Biz4group LLC',
     description: 'Developing and maintaining web applications using React, Node.js, and TypeScript. Creating RESTful APIs and implementing responsive user interfaces. Collaborating with cross-functional teams to deliver high-quality software solutions.',
     timeline: '2022 - Present'
@@ -165,7 +200,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     title: 'FullStack Developer',
     company: 'LetsGrowMore Internship',
     description: 'Built full-stack web applications using React, Node.js, and MongoDB. Implemented user authentication and authorization systems. Developed RESTful APIs and integrated third-party services. Created responsive UI components with modern CSS frameworks.',
-    timeline: '2022 - 2022'
+    timeline: '2021 - 2021'
   }
 ];
 
@@ -214,23 +249,23 @@ export const FORM_FIELDS: FormField[] = [
 
 export const HERO_DATA: HeroData = {
   badge: "Available for new opportunities",
-  title: "Hi, I'm Krishna Gautam, a  ",
-  subtitle: "Software Engineer",
-  description: "Software Engineer with " + EXPERIENCE + " building scalable full-stack and AI-driven applications. Expertise in JavaScript/TypeScript, React, Node.js, cloud-native architectures, and LLM-based systems. Proven ability to design microservices, integrate payment gateways, and deploy production systems using AWS, GCP, Docker, Kubernetes, and CI/CD pipelines.",
+  title: "Hi, I'm "+MY_URLS.NAME,
+  subtitle: MY_URLS.PROFILE,
+  description: MY_URLS.PROFILE+" with " + MY_URLS.EXPERIENCE + " building scalable full-stack and AI-driven applications. Expertise in JavaScript/TypeScript, React, Node.js, cloud-native architectures, and LLM-based systems. Proven ability to design microservices, integrate payment gateways, and deploy production systems using AWS, GCP, Docker, Kubernetes, and CI/CD pipelines. Successfully delivered enterprise-level e-commerce platforms with 40% performance improvements, AI-powered fitness applications with personalized recommendations, and real-time data processing systems. Led cross-functional teams through complete software development lifecycles, from architecture design to production deployment and maintenance.",
   buttons: [
     { text: "View Projects", variant: "primary", href: "/projects" },
     { text: "Contact Me", variant: "secondary", href: "/contact" }
   ],
   profileImage: {
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPvCunqKnPOrFU6nflBHhtb0qwLtt7RMhjC-mL03aIZ8Xi2yG4kT7vjGsYoUHsCKYC_QkqvCYpMyAomGrERbzaxVYkHnti74LBG0rz9hm-w3Gdb1yFH3cbRFImVkSIU5Zi9bXijoEhbZ8_wyCUiGELLPKYiGxpRQBYzYy86kI_ZI0FVTA1nSSsC9q9eOExlresUCkmtzLVbYTgsTK_M1wLFsbFdP5wblk7wQ6XBFe0tCpsxK29Np-heGvlnQ-BDKgrFn6w3CuQ-mk",
-    alt: "Krishna Gautam profile"
+    alt: MY_URLS.NAME+" profile"
   }
 };
 
 export const STATS_DATA: StatItem[] = [
   {
     title: "Building intelligent solutions with cutting-edge AI technology.",
-    value: EXPERIENCE,
+    value: MY_URLS.EXPERIENCE,
     description: "Years of Full Stack AI Development",
     variant: "featured",
     span: "md:col-span-2"
@@ -254,7 +289,7 @@ export const PROJECT_REVEAL_HEADER: ProjectRevealHeader = {
   badge: "Selected Archives",
   title: "The Exhibition",
   cta: {
-    text: "View Portfolio",
+    text: "View Profile",
     href: "#",
     icon: "arrow_forward"
   }

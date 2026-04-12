@@ -51,7 +51,7 @@ const StatsSection = () => {
   };
 
   return (
-    <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mt-32">
+    <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mt-16">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {STATS_DATA.map((stat, index) => (
           <div key={index} className={getStatClasses(stat.variant, stat.span)}>

@@ -1,11 +1,6 @@
-interface ExperienceItemProps {
-  position: 'left' | 'right';
-  title: string;
-  company: string;
-  description: string;
-  timeline: string;
-  index: number;
-}
+import { getDuration, getRoleIcon, getTechStack } from "../utils/helper";
+import { ExperienceItemProps } from "../utils/interfaces";
+
 
 const ExperienceItem = ({ position, title, company, description, timeline, index }: ExperienceItemProps) => {
   const isLeft = position === 'left';
@@ -71,36 +66,9 @@ const ExperienceItem = ({ position, title, company, description, timeline, index
 };
 
 // Helper functions
-const getRoleIcon = (title: string): string => {
-  if (title.includes('Senior')) return 'workspace_premium';
-  if (title.includes('Full-Stack')) return 'layers';
-  if (title.includes('Frontend')) return 'web';
-  if (title.includes('Junior')) return 'rocket_launch';
-  return 'work';
-};
 
-const getTechStack = (title: string): string[] => {
-  const stacks: Record<string, string[]> = {
-    'Senior Full-Stack Developer': ['Node.js', 'React', 'PostgreSQL', 'CI/CD', 'REST APIs'],
-    'Full-Stack Engineer': ['Next.js', 'TypeScript', 'MongoDB', 'WebSocket', 'Redis'],
-    'Frontend Developer': ['React', 'Vue.js', 'Redux', 'CSS3', 'JavaScript'],
-    'Junior Web Developer': ['HTML5', 'CSS3', 'JavaScript', 'APIs', 'Git']
-  };
-  return stacks[title] || [];
-};
 
-const getDuration = (timeline: string): string => {
-  if (timeline.includes('Present')) {
-    const year = parseInt(timeline.split(' - ')[0]);
-    const currentYear = new Date().getFullYear();
-    return `${currentYear - year + 1}+ years`;
-  }
-  const years = timeline.split(' - ');
-  if (years.length === 2) {
-    const duration = parseInt(years[1]) - parseInt(years[0]) + 1;
-    return `${duration} years`;
-  }
-  return '';
-};
+
+
 
 export default ExperienceItem;

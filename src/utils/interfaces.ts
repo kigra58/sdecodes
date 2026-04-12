@@ -143,3 +143,13 @@ export interface UIStrings {
     };
   };
 }
+
+
+export interface ExperienceItemProps {
+  position: 'left' | 'right';
+  title: string;
+  company: string;
+  description: string;
+  timeline: string;
+  index: number;
+}

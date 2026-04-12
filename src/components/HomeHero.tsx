@@ -5,7 +5,7 @@ import ProjectReveal from './ProjectReveal';
 
 const HomeHero = () => {
   return (
-    <section className="pb-20" id="home">
+    <section className="pb-12" id="home">
       {/* Hero Section */}
       <HeroContent />
 

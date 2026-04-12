@@ -1,6 +1,14 @@
-import { BIO_DATA } from '../utils/constant';
+import { BIO_DATA, MY_URLS } from '../utils/constant';
 
 const BioContent = () => {
+  const handleResumeDownload = () => {
+    window.open(MY_URLS.RESUME, '_blank');
+  };
+
+  const handleViewProjects = () => {
+    window.open(MY_URLS.GITHUB_URL, '_blank');
+  };
+
   return (
     <div className="w-full lg:w-7/12">
       <div className="mb-4">
@@ -20,6 +28,13 @@ const BioContent = () => {
         {BIO_DATA.buttons.map((button, index) => (
           <button
             key={index}
+            onClick={
+              button.text === "DOWNLOAD RESUME" 
+                ? handleResumeDownload 
+                : button.text === "VIEW PROJECTS" 
+                ? handleViewProjects 
+                : undefined
+            }
             className={`px-8 py-4 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 flex items-center gap-3 transform hover:scale-105 ${
               button.variant === 'primary'
                 ? 'bg-primary text-on-primary shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:bg-primary-container hover:shadow-xl'
