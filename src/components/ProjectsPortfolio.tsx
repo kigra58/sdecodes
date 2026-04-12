@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProjectGrid from './ProjectGrid';
-import { PROJECT_ITEMS } from '../utils/constant';
+import { PROJECT_ITEMS, PORTFOLIO_HERO, UI_STRINGS } from '../utils/constant';
+import { openMailBox } from '../utils/helper';
 
 const ProjectsPortfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All Projects');
@@ -24,19 +25,19 @@ const ProjectsPortfolio = () => {
       <header className="mb-16 text-center md:text-left">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <span className="text-primary font-bold text-xs tracking-[0.2em] uppercase mb-4 block">Portfolio</span>
-            <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">
-              Featured<br/>Projects.
-            </h1>
+            <span className="text-primary font-bold text-xs tracking-[0.2em] uppercase mb-4 block">{PORTFOLIO_HERO.badge}</span>
+            <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6"
+              dangerouslySetInnerHTML={{ __html: PORTFOLIO_HERO.title }}
+            />
             <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-primary-container rounded-full mb-6"></div>
             <p className="text-on-surface-variant text-lg leading-relaxed max-w-xl">
-              A curated collection of full-stack applications and AI-powered solutions built with modern technologies and architectural best practices.
+              {PORTFOLIO_HERO.description}
             </p>
           </div>
           <div className="flex flex-col items-center md:items-end gap-4">
             <div className="text-center md:text-right">
-              <div className="text-3xl font-bold text-primary mb-1">{PROJECT_ITEMS.length}</div>
-              <div className="text-sm text-on-surface-variant">Completed Projects</div>
+              <div className="text-3xl font-bold text-primary mb-1">{PORTFOLIO_HERO.stats.count}</div>
+              <div className="text-sm text-on-surface-variant">{PORTFOLIO_HERO.stats.label}</div>
             </div>
           </div>
         </div>
@@ -97,11 +98,12 @@ const ProjectsPortfolio = () => {
       {/* Footer Callout */}
       <div className="mt-20 text-center">
         <div className="bg-surface-container-low p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h3 className="text-2xl font-bold text-on-surface mb-4">Interested in collaboration?</h3>
+          <h3 className="text-2xl font-bold text-on-surface mb-4">{UI_STRINGS.projects.cta.title}</h3>
           <p className="text-on-surface-variant mb-6 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and exciting projects. Let's build something amazing together.
+            {UI_STRINGS.projects.cta.description}
           </p>
-          <button className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 active:scale-95">
+          <button onClick={openMailBox}
+          className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 active:scale-95">
             Get In Touch
           </button>
         </div>

@@ -90,7 +90,7 @@ const getTechStack = (title: string): string[] => {
 };
 
 const getDuration = (timeline: string): string => {
-  if (timeline.includes('PRESENT')) {
+  if (timeline.includes('Present')) {
     const year = parseInt(timeline.split(' - ')[0]);
     const currentYear = new Date().getFullYear();
     return `${currentYear - year + 1}+ years`;

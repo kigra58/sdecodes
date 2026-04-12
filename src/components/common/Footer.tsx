@@ -1,4 +1,4 @@
-import { FOOTER_SECTIONS, FOOTER_SOCIAL_LINKS } from '../../utils/constant';
+import { BRAND_NAME, FOOTER_SECTIONS, FOOTER_SOCIAL_LINKS } from '../../utils/constant';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -70,7 +70,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-xs tracking-wide uppercase" style={{ color: 'var(--on-surface-variant)' }}>
-              © {currentYear} KRISHNA. ALL RIGHTS RESERVED.
+              © {currentYear} {BRAND_NAME}. ALL RIGHTS RESERVED.
             </div>
           </div>
         </div>

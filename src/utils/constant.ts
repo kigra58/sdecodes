@@ -1,5 +1,17 @@
 import { NavItem, ProjectItem, ExperienceItem, FormField, ContactInfo, SocialLink, HeroData, StatItem, ProjectRevealHeader, UIStrings, FooterSection, FooterLink } from "./interfaces";
 
+
+export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+export const BRAND_NAME="SDE"
+const EXPERIENCE="4+ years experirence"
+
+export const MY_URLS={
+  GITHUB_URL:"https://github.com/kigra58",
+  LINKEDIN_URL:"https://www.linkedin.com/in/krishna-gautam-5486081b1/",
+  EMAIL:"krishna.gautam5899@gmail.com",
+  RESUME:"https://drive.google.com/file/d/1eZT78gyzCHDXWVfQhT9tE7PPl2HjUlzb/view?usp=drivesdk"
+}
+
 export const NAVIGATION_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about', isActive: true },
@@ -55,7 +67,87 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       'Vector embeddings for improved context'
     ],
     techStack: ['LangChain', 'Python', 'LLMs', 'Vector DB', 'PostgreSQL', 'REST APIs', 'WebSocket', 'OpenAI', 'AWS', 'Streaming'],
-    image: 'https://images.unsplash.com/photo-1531297483765-98a748215c6b?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Cloud Infrastructure',
+    title: 'Cloud-Native Microservices Platform',
+    timeline: '2023 - Cloud Architecture',
+    hasBorder: true,
+    description: 'Built scalable microservices architecture using Kubernetes and Docker. Implemented auto-scaling, load balancing, and service mesh for high availability.',
+    features: [
+      '95.9% uptime with auto-scaling policies',
+      'Reduced deployment time by 70% with CI/CD',
+      'Implemented service mesh for inter-service communication',
+      'Real-time monitoring and alerting system'
+    ],
+    techStack: ['Kubernetes', 'Docker', 'AWS EKS', 'Istio', 'Prometheus', 'Grafana', 'Jenkins', 'Terraform', 'Go', 'gRPC'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Full-Stack',
+    title: 'Real-Time Collaboration Platform',
+    timeline: '2023 - Full-Stack Development',
+    hasBorder: true,
+    description: 'Developed a real-time collaborative workspace with live editing, video conferencing, and project management features.',
+    features: [
+      'Real-time synchronization with WebSocket',
+      'Optimistic UI updates for instant feedback',
+      'Video conferencing with WebRTC',
+      'Advanced permission management system'
+    ],
+    techStack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'WebRTC', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'GraphQL'],
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'AI & Analytics',
+    title: 'Predictive Analytics Dashboard',
+    timeline: '2023 - AI/ML Development',
+    hasBorder: false,
+    description: 'Created an AI-powered analytics platform that predicts business trends and provides actionable insights using machine learning models.',
+    features: [
+      '90% accuracy in sales forecasting',
+      'Real-time data processing with streaming analytics',
+      'Interactive visualization with D3.js',
+      'Automated anomaly detection system'
+    ],
+    techStack: ['Python', 'TensorFlow', 'React', 'D3.js', 'Apache Kafka', 'Elasticsearch', 'MongoDB', 'AWS SageMaker', 'Docker', 'FastAPI'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Cloud & DevOps',
+    title: 'Serverless API Gateway',
+    timeline: '2023 - Cloud Development',
+    hasBorder: true,
+    description: 'Designed and implemented a serverless API gateway with automated deployment, monitoring, and cost optimization.',
+    features: [
+      '60% reduction in infrastructure costs',
+      'Auto-scaling based on traffic patterns',
+      'Automated testing and deployment pipelines',
+      'Real-time performance monitoring'
+    ],
+    techStack: ['AWS Lambda', 'API Gateway', 'Serverless Framework', 'Terraform', 'CircleCI', 'New Relic', 'Node.js', 'TypeScript', 'DynamoDB'],
+    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'AI & Computer Vision',
+    title: 'Intelligent Document Scanner',
+    timeline: '2023 - AI Development',
+    hasBorder: false,
+    description: 'Built an AI-powered document scanning app that automatically extracts text, categorizes documents, and provides smart search capabilities.',
+    features: [
+      'OCR with 98% accuracy rate',
+      'Automatic document categorization',
+      'Intelligent search across all documents',
+      'Cloud storage with encryption'
+    ],
+    techStack: ['Python', 'TensorFlow', 'OpenCV', 'Tesseract OCR', 'React Native', 'Firebase', 'Google Cloud Vision', 'Node.js', 'MongoDB'],
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop',
     link: '#'
   }
 ];
@@ -63,48 +155,32 @@ export const PROJECT_ITEMS: ProjectItem[] = [
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     position: 'left',
-    title: 'Senior Full-Stack Developer',
-    company: 'TechVentures Inc.',
-    description: 'Led development of microservices architecture using Node.js, React, and PostgreSQL. Implemented CI/CD pipelines reducing deployment time by 60%. Architected RESTful APIs serving 100K+ daily users.',
-    timeline: '2022 - PRESENT'
+    title: 'Software Engineer',
+    company: 'Biz4group LLC',
+    description: 'Developing and maintaining web applications using React, Node.js, and TypeScript. Creating RESTful APIs and implementing responsive user interfaces. Collaborating with cross-functional teams to deliver high-quality software solutions.',
+    timeline: '2022 - Present'
   },
   {
     position: 'right',
-    title: 'Full-Stack Engineer',
-    company: 'Digital Dynamics',
-    description: 'Built scalable e-commerce platforms with Next.js, TypeScript, and MongoDB. Developed real-time features using WebSocket and Redis. Optimized database queries improving performance by 45%.',
-    timeline: '2020 - 2022'
-  },
-  {
-    position: 'left',
-    title: 'Frontend Developer',
-    company: 'CloudScale Solutions',
-    description: 'Created responsive web applications using React, Vue.js, and modern CSS. Implemented state management with Redux and Vuex. Collaborated with UX team to enhance user experience.',
-    timeline: '2018 - 2020'
-  },
-  {
-    position: 'right',
-    title: 'Junior Web Developer',
-    company: 'StartUp Hub',
-    description: 'Developed and maintained client websites using HTML5, CSS3, and JavaScript. Integrated third-party APIs and payment gateways. Participated in agile development processes.',
-    timeline: '2017 - 2018'
+    title: 'FullStack Developer',
+    company: 'LetsGrowMore Internship',
+    description: 'Built full-stack web applications using React, Node.js, and MongoDB. Implemented user authentication and authorization systems. Developed RESTful APIs and integrated third-party services. Created responsive UI components with modern CSS frameworks.',
+    timeline: '2022 - 2022'
   }
 ];
 
-
-
 export const contactInfo: ContactInfo[] = [
-    {
-      icon: 'mail',
-      label: 'Email Me',
-      value: 'studio@curated.exhibit'
-    },
-    {
-      icon: 'location_on',
-      label: 'Location',
-      value: 'Brooklyn, New York'
-    }
-  ];
+  {
+    icon: 'mail',
+    label: 'Email Me',
+    value:  MY_URLS.EMAIL
+  },
+  {
+    icon: 'location_on',
+    label: 'Location',
+    value: 'Jaipur India'
+  }
+];
 
 export const socialLinks: SocialLink[] = [
     { icon: 'share', href: '#' },
@@ -134,32 +210,34 @@ export const FORM_FIELDS: FormField[] = [
   }
 ];
 
+
+
 export const HERO_DATA: HeroData = {
   badge: "Available for new opportunities",
-  title: "Hi, I'm Alex Rivera, a Senior ",
-  subtitle: "Product Designer",
-  description: "I specialize in crafting high-end digital experiences that bridge the gap between human emotion and technological precision. My approach focuses on editorial aesthetics and functional clarity.",
+  title: "Hi, I'm Krishna Gautam, a  ",
+  subtitle: "Software Engineer",
+  description: "Software Engineer with " + EXPERIENCE + " building scalable full-stack and AI-driven applications. Expertise in JavaScript/TypeScript, React, Node.js, cloud-native architectures, and LLM-based systems. Proven ability to design microservices, integrate payment gateways, and deploy production systems using AWS, GCP, Docker, Kubernetes, and CI/CD pipelines.",
   buttons: [
     { text: "View Projects", variant: "primary", href: "/projects" },
     { text: "Contact Me", variant: "secondary", href: "/contact" }
   ],
   profileImage: {
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPvCunqKnPOrFU6nflBHhtb0qwLtt7RMhjC-mL03aIZ8Xi2yG4kT7vjGsYoUHsCKYC_QkqvCYpMyAomGrERbzaxVYkHnti74LBG0rz9hm-w3Gdb1yFH3cbRFImVkSIU5Zi9bXijoEhbZ8_wyCUiGELLPKYiGxpRQBYzYy86kI_ZI0FVTA1nSSsC9q9eOExlresUCkmtzLVbYTgsTK_M1wLFsbFdP5wblk7wQ6XBFe0tCpsxK29Np-heGvlnQ-BDKgrFn6w3CuQ-mk",
-    alt: "Alex Rivera profile"
+    alt: "Krishna Gautam profile"
   }
 };
 
 export const STATS_DATA: StatItem[] = [
   {
     title: "Building intelligent solutions with cutting-edge AI technology.",
-    value: "5+",
+    value: EXPERIENCE,
     description: "Years of Full Stack AI Development",
     variant: "featured",
     span: "md:col-span-2"
   },
   {
     title: "",
-    value: "100+",
+    value: "10+",
     description: "AI Models Deployed",
     variant: "primary"
   },
@@ -180,6 +258,12 @@ export const PROJECT_REVEAL_HEADER: ProjectRevealHeader = {
     href: "#",
     icon: "arrow_forward"
   }
+};
+
+export const EXPERIENCE_HEADER = {
+  badge: "Professional Journey",
+  title: "Experience.",
+  description: "A journey through full-stack development, from building responsive interfaces to architecting scalable backend systems."
 };
 
 export const SKILLS_DATA = [
@@ -240,14 +324,13 @@ export const SKILLS_DATA = [
 ];
 
 
-export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
 
 export const THEME={
   DARK:"dark",
   LIGHT:"light"
 }
 
-export const BRAND_NAME="SDE"
+
 
 export const BIO_DATA = {
   badge: "Full Stack AI Engineer",
@@ -367,11 +450,11 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Resources",
     links: [
-      { label: "GitHub", href: "https://github.com", icon: "code" },
-      { label: "LinkedIn", href: "https://linkedin.com", icon: "work" },
-      { label: "Portfolio", href: "#projects", icon: "web" },
-      { label: "Resume", href: "#resume", icon: "description" },
-      { label: "Blog", href: "#blog", icon: "article" }
+      { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code" },
+      { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work" },
+      { label: "Resume", href: MY_URLS.RESUME, icon: "description" },
+      // { label: "Portfolio", href: "#projects", icon: "web" },
+      // { label: "Blog", href: "#blog", icon: "article" }
     ]
   },
   {
@@ -384,19 +467,29 @@ export const FOOTER_SECTIONS: FooterSection[] = [
       { label: "Database Systems", href: "#skills" }
     ]
   },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "#privacy" },
-      { label: "Terms of Service", href: "#terms" },
-      { label: "Cookie Policy", href: "#cookies" }
-    ]
-  }
+  // {
+  //   title: "Legal",
+  //   links: [
+  //     { label: "Privacy Policy", href: "#privacy" },
+  //     { label: "Terms of Service", href: "#terms" },
+  //     { label: "Cookie Policy", href: "#cookies" }
+  //   ]
+  // }
 ];
 
 export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
-  { label: "GitHub", href: "https://github.com/kigra58", icon: "code" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/krishna-gautam-5486081b1/", icon: "work" },
+  { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code" },
+  { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work" },
+  { label: "Email", href: "mailto:" + MY_URLS.EMAIL, icon: "mail" }
   // { label: "Twitter", href: "https://twitter.com", icon: "alternate_email" },
-  { label: "Email", href: "mailto:krishna.gautam5899@gmail.com", icon: "mail" }
 ];
+
+export const PORTFOLIO_HERO = {
+  badge: "Portfolio",
+  title: "Featured<br/>Projects.",
+  description: "A curated collection of full-stack applications and AI-powered solutions built with modern technologies and architectural best practices.",
+  stats: {
+    count: PROJECT_ITEMS.length,
+    label: "Completed Projects"
+  }
+};
