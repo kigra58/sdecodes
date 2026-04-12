@@ -247,7 +247,7 @@ export const THEME={
   LIGHT:"light"
 }
 
-export const BRAND_NAME="KRISHNA"
+export const BRAND_NAME="SDE"
 
 export const BIO_DATA = {
   badge: "Full Stack AI Engineer",
