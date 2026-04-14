@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTrendingRepositories, GitHubRepository } from '../../services/github';
-import { UIText } from '../../constants/uiText';
+
 import styles from './TrendingRepoCard.module.css';
+import { UIText } from '../../utils/constant';
 
 const TrendingRepoCard: React.FC = () => {
   const [repository, setRepository] = useState<GitHubRepository | null>(null);

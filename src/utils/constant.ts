@@ -502,14 +502,14 @@ export const FOOTER_SECTIONS: FooterSection[] = [
       { label: "Database Systems", href: "#skills" }
     ]
   },
-  // {
-  //   title: "Legal",
-  //   links: [
-  //     { label: "Privacy Policy", href: "#privacy" },
-  //     { label: "Terms of Service", href: "#terms" },
-  //     { label: "Cookie Policy", href: "#cookies" }
-  //   ]
-  // }
+  {
+    title: "Developer links",
+    links: [
+      { label: "Skills", href: "skills.sh" },
+      // { label: "Terms of Service", href: "#terms" },
+      // { label: "Cookie Policy", href: "#cookies" }
+    ]
+  }
 ];
 
 export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
@@ -528,3 +528,14 @@ export const PORTFOLIO_HERO = {
     label: "Completed Projects"
   }
 };
+
+
+export const UIText = {
+  TRENDING_LABEL: 'GitHub Trending',
+  TRENDING_EMOJI: 'ð',
+  TITLE: '#1 Repository of the Day',
+  VIEW_ON_GITHUB: 'View on GitHub',
+  LOADING: 'Loading trending repository...',
+  ERROR: 'Unable to load trending repository. Please try again later.',
+  STARS_LABEL: 'stars',
+} as const;
