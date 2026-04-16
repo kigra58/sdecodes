@@ -1,3 +1,4 @@
+import React from 'react';
 interface StatItemProps {
   value: string;
   label: string;
@@ -12,4 +13,8 @@ const StatItem = ({ value, label }: StatItemProps) => {
   );
 };
 
-export default StatItem;
+
+const MemoizedStatItem = React.memo(StatItem);
+
+export { MemoizedStatItem };
+export default MemoizedStatItem;

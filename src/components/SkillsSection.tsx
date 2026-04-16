@@ -1,32 +1,29 @@
-import { useState } from 'react';
-import { SKILLS_DATA, UI_STRINGS } from '../utils/constant';
+import { useState, useMemo, useCallback } from 'react';
+import { LABELS, SKILLS_DATA, UI_STRINGS } from '../utils/constant';
 import SkillCard from './SkillCard';
 
 const SkillsSection = () => {
+
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Extract unique categories
-  const categories = ['all', ...Array.from(new Set(SKILLS_DATA.map(s => s.category)))];
+  // Memoize categories
+  const categories = useMemo(() => ['all', ...Array.from(new Set(SKILLS_DATA.map(s => s.category)))], []);
 
-  // Filter skills based on selected category
-  const filteredSkills = selectedCategory === 'all' 
-    ? SKILLS_DATA 
-    : SKILLS_DATA.filter(skill => skill.category === selectedCategory);
+  // Memoize filtered skills
+  const filteredSkills = useMemo(
+    () => selectedCategory === 'all' 
+      ? SKILLS_DATA 
+      : SKILLS_DATA.filter(skill => skill.category === selectedCategory),
+    [selectedCategory]
+  );
 
-  const getCategoryLabel = (category: string) => {
-    const labels: Record<string, string> = {
-      'all': 'All Skills',
-      'core': 'Languages',
-      'frontend': 'Frontend',
-      'backend': 'Backend',
-      'database': 'Database',
-      'devops': 'DevOps & Cloud',
-      'ai': 'AI / ML'
-    };
-    return labels[category] || category;
-  };
+  // Memoize category label function
+  const getCategoryLabel = useCallback((category: string) => {
 
-  const totalSkills = SKILLS_DATA.reduce((acc, skill) => acc + skill.tags.length, 0);
+    return LABELS[category] || category;
+  }, []);
+
+  const totalSkills = useMemo(() => SKILLS_DATA.reduce((acc, skill) => acc + skill.tags.length, 0), []);
 
   return (
     <section className="bg-surface-container-low py-20 px-6 md:px-12" id="skills">
@@ -61,7 +58,7 @@ const SkillsSection = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={useCallback(() => setSelectedCategory(category), [category])}
                 className={`px-6 py-2.5 rounded-full font-label text-sm font-semibold tracking-wide transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg shadow-primary/20'
@@ -119,5 +116,8 @@ const SkillsSection = () => {
     </section>
   );
 };
+
+
+
 
 export default SkillsSection;

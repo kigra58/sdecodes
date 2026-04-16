@@ -4,7 +4,7 @@ import { fetchTrendingRepositories, GitHubRepository } from '../../services/gith
 import styles from './TrendingRepoCard.module.css';
 import { UIText } from '../../utils/constant';
 
-const TrendingRepoCard: React.FC = () => {
+const TrendingRepoCard: React.FC = React.memo(() => {
   const [repository, setRepository] = useState<GitHubRepository | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -97,6 +97,6 @@ const TrendingRepoCard: React.FC = () => {
       </a>
     </article>
   );
-};
+});
 
 export default TrendingRepoCard;

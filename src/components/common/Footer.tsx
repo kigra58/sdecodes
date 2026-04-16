@@ -1,6 +1,7 @@
 import { BRAND_NAME, FOOTER_SECTIONS, FOOTER_SOCIAL_LINKS } from '../../utils/constant';
 
-const Footer = () => {
+import React from 'react';
+const Footer = React.memo(() => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,6 +19,8 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target={link.target || '_self'}
+                      rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
                       className="flex items-center gap-2 transition-colors duration-200 hover:underline"
                       style={{ color: 'var(--on-surface-variant)' }}
                       onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'}
@@ -79,6 +82,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

@@ -5,7 +5,9 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: LayoutProps) => {
+
+import React from 'react';
+const Layout = React.memo(({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--surface)', color: 'var(--on-surface)' }}>
       <Header />
@@ -14,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+});
 
 export default Layout

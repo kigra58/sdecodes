@@ -185,6 +185,25 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
     link: '#'
   },
+  {
+    category: 'AI & HR',
+    title: 'AI Hiring Manager',
+    timeline: '2023 - AI/ML Development',
+    hasBorder: true,
+    description: 'Intelligent hiring platform that uses AI to streamline recruitment processes, from resume screening to candidate matching and interview scheduling.',
+    features: [
+      'AI-powered candidate-job matching with 92% accuracy',
+      'Interview scheduling and calendar integration',
+      'Real-time analytics and diversity hiring insights',
+      'Question generation for interviewers using AI based on candidate resume and job description',
+      'Generate Feedback on candidate performance',
+      'Video interview with AI-powered analysis',
+      "AI-powered candidate assessment and evaluation"
+    ],
+    techStack: ['Microservices','OpenAI','NodeJs', 'React', 'MySql', 'REST APIs', 'WebSocket', 'AWS', 'Docker', 'Google Calendar API', 'ECR','ECS', 'Stripe','Assessment AI', 'Agora'],
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    link: '#'
+  },
 ];
 
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
@@ -307,7 +326,7 @@ export const SKILLS_DATA = [
     description: "Core programming languages for full-stack development and AI applications.",
     icon: "code",
     variant: "primary" as const,
-    tags: ["JavaScript", "TypeScript", "Python"],
+    tags: ["JavaScript", "TypeScript", "Python","C++","GO"],
     gridSize: { md: "md:col-span-2", lg: "lg:col-span-3" },
     category: "core"
   },
@@ -343,7 +362,7 @@ export const SKILLS_DATA = [
     description: "Cloud platforms and deployment tools for modern application infrastructure.",
     icon: "cloud",
     variant: "border-slate" as const,
-    tags: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"],
+    tags: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Monitoring", "Alerting"],
     gridSize: { md: "md:col-span-2", lg: "lg:col-span-3" },
     category: "devops"
   },
@@ -485,9 +504,9 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Resources",
     links: [
-      { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code" },
-      { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work" },
-      { label: "Resume", href: MY_URLS.RESUME, icon: "description" },
+      { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code", target: "_blank" },
+      { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work", target: "_blank" },
+      { label: "Resume", href: MY_URLS.RESUME, icon: "description", target: "_blank" },
       // { label: "Portfolio", href: "#projects", icon: "web" },
       // { label: "Blog", href: "#blog", icon: "article" }
     ]
@@ -505,7 +524,8 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Developer links",
     links: [
-      { label: "Skills", href: "skills.sh" },
+      { label: "Skills", href: "https://skills.sh/", target: "_blank" },
+      { label: "Compiler", href: "https://www.programiz.com/javascript/online-compiler/", target: "_blank" },
       // { label: "Terms of Service", href: "#terms" },
       // { label: "Cookie Policy", href: "#cookies" }
     ]
@@ -513,10 +533,10 @@ export const FOOTER_SECTIONS: FooterSection[] = [
 ];
 
 export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
-  { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code" },
-  { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work" },
+  { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code", target: "_blank" },
+  { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work", target: "_blank" },
   { label: "Email", href: "mailto:" + MY_URLS.EMAIL, icon: "mail" }
-  // { label: "Twitter", href: "https://twitter.com", icon: "alternate_email" },
+  // { label: "Twitter", href: "https://twitter.com", icon: "alternate_email", target: "_blank" },
 ];
 
 export const PORTFOLIO_HERO = {
@@ -539,3 +559,14 @@ export const UIText = {
   ERROR: 'Unable to load trending repository. Please try again later.',
   STARS_LABEL: 'stars',
 } as const;
+
+
+export const LABELS: Record<string, string> = {
+      'all': 'All Skills',
+      'core': 'Languages',
+      'frontend': 'Frontend',
+      'backend': 'Backend',
+      'database': 'Database',
+      'devops': 'DevOps & Cloud',
+      'ai': 'AI / ML'
+    };

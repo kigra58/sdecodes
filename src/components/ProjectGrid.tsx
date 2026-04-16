@@ -84,12 +84,12 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
               )}
               
               {/* Action Button */}
-              <div className="mt-auto">
+              {/* <div className="mt-auto">
                 <button className="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 rounded-lg font-semibold text-sm tracking-wide hover:shadow-lg transition-all duration-300 active:scale-95 flex items-center justify-center gap-2">
                   <span>View Project</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

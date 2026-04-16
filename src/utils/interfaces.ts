@@ -91,6 +91,7 @@ export interface FooterLink {
   label: string;
   href: string;
   icon?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
 export interface FooterSection {

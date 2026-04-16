@@ -23,4 +23,9 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+
+import React from 'react';
+const MemoizedAboutSection = React.memo(AboutSection);
+
+export { MemoizedAboutSection };
+export default MemoizedAboutSection;

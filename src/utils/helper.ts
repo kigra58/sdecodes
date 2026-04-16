@@ -53,3 +53,55 @@ export const getRoleIcon = (title: string): string => {
   if (title.includes('Junior')) return 'rocket_launch';
   return 'work';
 };
+
+ export const getStatClasses = (variant: string, span?: string) => {
+    const baseClasses = "p-10 rounded-xl flex flex-col justify-center";
+    
+    switch (variant) {
+      case 'featured':
+        return `${baseClasses} justify-between group hover:shadow-md transition-shadow duration-300 border border-outline-variant/10 bg-surface-container-lowest shadow-sm ${span || ''}`;
+      case 'primary':
+        return `${baseClasses} items-center text-center bg-primary text-on-primary`;
+      case 'icon':
+        return `${baseClasses} items-center text-center bg-surface-container-high`;
+      default:
+        return baseClasses;
+    }
+  };
+
+
+ export const getVariantClasses = (variant: string) => {
+    switch (variant) {
+      case 'primary':
+        return 'bg-gradient-to-br from-primary to-primary-container text-on-primary';
+      case 'border-primary':
+        return 'bg-surface-container-low border-2 border-primary/30 hover:border-primary/50';
+      case 'border-indigo':
+        return 'bg-surface-container-low border-2 border-indigo-300/50 hover:border-indigo-300';
+      case 'border-slate':
+        return 'bg-surface-container-low border-2 border-slate-300/50 hover:border-slate-300';
+      default:
+        return 'bg-surface-container-low border-2 border-transparent hover:border-primary/30';
+    }
+  };
+
+ export const getIconColor = (variant: string) => {
+    switch (variant) {
+      case 'primary':
+        return 'text-on-primary';
+      case 'border-indigo':
+        return 'text-indigo-400';
+      case 'border-slate':
+        return 'text-slate-400';
+      default:
+        return 'text-primary';
+    }
+  };
+
+ export const getTitleColor = (variant: string) => {
+    return variant === 'primary' ? 'text-on-primary' : 'text-on-surface';
+  };
+
+ export const getDescriptionColor = (variant: string) => {
+    return variant === 'primary' ? 'text-on-primary/80' : 'text-on-surface-variant';
+  };

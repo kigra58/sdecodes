@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { NAVIGATION_ITEMS, sections, THEME, BRAND_NAME } from '../../utils/constant';
 import { useTheme } from '../../contexts/ThemeContext';
 
-const Header = () => {
+import React from 'react';
+const Header = React.memo(() => {
   const [activeSection, setActiveSection] = useState('about');
   const { theme, toggleTheme } = useTheme();
 
@@ -74,6 +75,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;
