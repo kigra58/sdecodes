@@ -11,7 +11,7 @@ export const MY_URLS={
   EMAIL:"krishna.gautam5899@gmail.com",
   RESUME:"https://drive.google.com/file/d/1eZT78gyzCHDXWVfQhT9tE7PPl2HjUlzb/view?usp=drivesdk",
   NAME:"Krishna Gautam",
-  EXPERIENCE:"4+ years experirence",
+  EXPERIENCE:"4+ years of experience",
   PROFILE:"Software Engineer"
 }
 
@@ -570,3 +570,15 @@ export const LABELS: Record<string, string> = {
       'devops': 'DevOps & Cloud',
       'ai': 'AI / ML'
     };
+
+export const GITHUB_API_CONFIG = {
+  BASE_URL: 'https://api.github.com',
+  SEARCH_REPOS: '/search/repositories',
+  TRENDING_PARAMS: {
+    SORT: 'stars',
+    ORDER: 'desc',
+    PER_PAGE: 5,
+    CREATED_DAYS_AGO: 7
+  },
+  OPEN_GRAPH_BASE: 'https://opengraph.githubassets.com/1'
+};

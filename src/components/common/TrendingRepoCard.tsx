@@ -5,7 +5,7 @@ import styles from './TrendingRepoCard.module.css';
 import { UIText } from '../../utils/constant';
 
 const TrendingRepoCard: React.FC = React.memo(() => {
-  const [repository, setRepository] = useState<GitHubRepository | null>(null);
+  const [repositories, setRepositories] = useState<GitHubRepository[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,7 +17,7 @@ const TrendingRepoCard: React.FC = React.memo(() => {
         const repositories = await fetchTrendingRepositories();
         
         if (repositories.length > 0) {
-          setRepository(repositories[0]);
+          setRepositories(repositories);
         } else {
           setError('No trending repositories found');
         }
@@ -42,60 +42,81 @@ const TrendingRepoCard: React.FC = React.memo(() => {
     return <div className={styles.loading}>{UIText.LOADING}</div>;
   }
 
-  if (error || !repository) {
+  if (error || repositories.length === 0) {
     return <div className={styles.error}>{error || UIText.ERROR}</div>;
   }
 
   return (
-    <article className={styles.trendingRepoCard}>
-      <header className={styles.header}>
-        <span className={styles.trendingEmoji}>{UIText.TRENDING_EMOJI}</span>
-        <span>{UIText.TRENDING_LABEL}</span>
+    <section className={styles.trendingRepoSection}>
+      <header className={styles.sectionHeader}>
+        <div className={styles.headerContent}>
+          <span className={styles.trendingEmoji}>{UIText.TRENDING_EMOJI}</span>
+          <span>{UIText.TRENDING_LABEL}</span>
+        </div>
+        <h2 className={styles.title}>Top 5 {UIText.TITLE}</h2>
       </header>
       
-      <h2 className={styles.title}>{UIText.TITLE}</h2>
-      
-      <a 
-        href={repository.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={styles.repoName}
-      >
-        {repository.author}/{repository.name}
-      </a>
-      
-      <p className={styles.description}>
-        {repository.description || 'No description available'}
-      </p>
-      
-      <div className={styles.meta}>
-        <div className={styles.stars}>
-          <span className={styles.starIcon}>â</span>
-          <span>{formatStars(repository.stars)} {UIText.STARS_LABEL}</span>
-        </div>
-        
-        {repository.language && (
-          <div className={styles.language}>
-            {repository.languageColor && (
-              <span 
-                className={styles.languageDot}
-                style={{ backgroundColor: repository.languageColor }}
+      <div className={styles.repositoryGrid}>
+        {repositories.map((repo, index) => (
+          <article key={`${repo.author}-${repo.name}`} className={styles.repoCard}>
+            <div className={styles.cardHeader}>
+              <img 
+                src={repo.avatar} 
+                alt={`${repo.author}'s avatar`} 
+                className={styles.avatar}
               />
-            )}
-            <span>{repository.language}</span>
-          </div>
-        )}
+              <div className={styles.repoInfo}>
+                <a 
+                  href={repo.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.repoName}
+                >
+                  {repo.author}/{repo.name}
+                </a>
+                <div className={styles.meta}>
+                  <div className={styles.stars}>
+                    <span className={styles.starIcon}>â</span>
+                    <span>{formatStars(repo.stars)} {UIText.STARS_LABEL}</span>
+                  </div>
+                  
+                  {repo.language && (
+                    <div className={styles.language}>
+                      <span className={styles.languageDot}></span>
+                      <span>{repo.language}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.thumbnailContainer}>
+              <img 
+                src={repo.thumbnail} 
+                alt={`${repo.name} thumbnail`} 
+                className={styles.thumbnail}
+                onError={(e) => {
+                  e.currentTarget.src = `https://via.placeholder.com/400x200/2f3b8d/ffffff?text=${repo.name}`;
+                }}
+              />
+            </div>
+            
+            <p className={styles.description}>
+              {repo.description || 'No description available'}
+            </p>
+            
+            <a 
+              href={repo.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.ctaButton}
+            >
+              {UIText.VIEW_ON_GITHUB}
+            </a>
+          </article>
+        ))}
       </div>
-      
-      <a 
-        href={repository.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={styles.ctaButton}
-      >
-        {UIText.VIEW_ON_GITHUB}
-      </a>
-    </article>
+    </section>
   );
 });
 

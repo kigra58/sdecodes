@@ -1,3 +1,5 @@
+import { GITHUB_API_CONFIG } from '../utils/constant';
+
 export interface GitHubRepository {
   author: string;
   name: string;
@@ -9,6 +11,7 @@ export interface GitHubRepository {
   stars: number;
   forks: number;
   currentPeriodStars: number;
+  thumbnail: string;
   builtBy: Array<{
     username: string;
     href: string;
@@ -25,11 +28,11 @@ export const fetchTrendingRepositories = async (): Promise<GitHubRepository[]> =
     // Use GitHub's official Search API to find popular repositories
     // Sort by stars and get repositories created in the last 7 days
     const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - GITHUB_API_CONFIG.TRENDING_PARAMS.CREATED_DAYS_AGO);
     const dateStr = sevenDaysAgo.toISOString().split('T')[0];
     
     const response = await fetch(
-      `https://api.github.com/search/repositories?q=created:>${dateStr}&sort=stars&order=desc&per_page=10`
+      `${GITHUB_API_CONFIG.BASE_URL}${GITHUB_API_CONFIG.SEARCH_REPOS}?q=created:>${dateStr}&sort=${GITHUB_API_CONFIG.TRENDING_PARAMS.SORT}&order=${GITHUB_API_CONFIG.TRENDING_PARAMS.ORDER}&per_page=${GITHUB_API_CONFIG.TRENDING_PARAMS.PER_PAGE}`
     );
     
     if (!response.ok) {
@@ -50,6 +53,7 @@ export const fetchTrendingRepositories = async (): Promise<GitHubRepository[]> =
       stars: item.stargazers_count,
       forks: item.forks_count,
       currentPeriodStars: 0, // Not available in this API
+      thumbnail: `${GITHUB_API_CONFIG.OPEN_GRAPH_BASE}/${item.owner.login}/${item.name}`,
       builtBy: [{
         username: item.owner.login,
         href: item.owner.html_url,
