@@ -57,7 +57,7 @@ const TrendingRepoCard: React.FC = React.memo(() => {
       </header>
       
       <div className={styles.repositoryGrid}>
-        {repositories.map((repo, index) => (
+        {repositories.map((repo) => (
           <article key={`${repo.author}-${repo.name}`} className={styles.repoCard}>
             <div className={styles.cardHeader}>
               <img 
