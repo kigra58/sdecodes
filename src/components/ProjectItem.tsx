@@ -27,14 +27,14 @@ const ProjectItem = ({ category, title, timeline, hasBorder = true }: ProjectIte
         <span className="text-on-surface-variant text-sm font-medium transition-all duration-300 group-hover:text-primary">
           {timeline}
         </span>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 text-primary text-lg">
             north_east
           </span>
           <span className="text-primary text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
             View Project
           </span>
-        </div>
+        </div> */}
       </div>
       
       {/* Subtle border animation */}

@@ -1,6 +1,7 @@
-import { FOOTER_SECTIONS, FOOTER_SOCIAL_LINKS } from '../../utils/constant';
+import { BRAND_NAME, FOOTER_SECTIONS, FOOTER_SOCIAL_LINKS } from '../../utils/constant';
 
-const Footer = () => {
+import React from 'react';
+const Footer = React.memo(() => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,6 +19,8 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target={link.target || '_self'}
+                      rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
                       className="flex items-center gap-2 transition-colors duration-200 hover:underline"
                       style={{ color: 'var(--on-surface-variant)' }}
                       onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'}
@@ -46,6 +49,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                   style={{ 
                     backgroundColor: 'var(--surface-container-high)',
@@ -70,13 +75,13 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-xs tracking-wide uppercase" style={{ color: 'var(--on-surface-variant)' }}>
-              © {currentYear} KRISHNA. ALL RIGHTS RESERVED.
+              © {currentYear} {BRAND_NAME}. ALL RIGHTS RESERVED.
             </div>
           </div>
         </div>
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

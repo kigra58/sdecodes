@@ -1,9 +1,10 @@
 import { contactInfo, socialLinks } from '../utils/constant';
+import { openMailBox } from '../utils/helper';
 
 const ContactInfo = () => {
   return (
     <div>
-      <p className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-4">Get in Touch</p>
+      <p onClick={openMailBox} className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-4 cursor-pointer">Get in Touch</p>
       <h2 className="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-6">Let's build something curated.</h2>
       <p className="text-on-surface-variant text-lg mb-8 max-w-md">I'm currently available for freelance projects and full-time collaborations. Let's discuss your next digital exhibit.</p>
       <div className="space-y-6">

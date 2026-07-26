@@ -1,9 +1,9 @@
 import ProjectItem from './ProjectItem';
-import { PROJECT_REVEAL_DATA, PROJECT_REVEAL_HEADER } from '../utils/constant';
+import { MY_URLS, PROJECT_REVEAL_DATA, PROJECT_REVEAL_HEADER } from '../utils/constant';
 
 const ProjectReveal = () => {
   return (
-    <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mt-20 relative overflow-hidden">
+    <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mt-12 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
       
@@ -26,7 +26,7 @@ const ProjectReveal = () => {
           className="text-primary font-semibold text-sm uppercase tracking-widest group flex items-center gap-2 px-6 py-3 rounded-full border border-primary/20 hover:border-primary hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/20" 
           href={PROJECT_REVEAL_HEADER.cta.href}
         >
-          <span className="transition-transform duration-300 group-hover:translate-x-1">
+          <span onClick={() => window.open(MY_URLS.LINKEDIN_URL,"_blank")} className="transition-transform duration-300 group-hover:translate-x-1">
             {PROJECT_REVEAL_HEADER.cta.text}
           </span>
           <span className="material-symbols-outlined transition-all duration-300 group-hover:translate-x-2 group-hover:rotate-45">

@@ -128,4 +128,9 @@ const ProjectCard = ({ type, title, description, category, year, image, tags, bu
   );
 };
 
-export default ProjectCard;
+
+import React from 'react';
+const MemoizedProjectCard = React.memo(ProjectCard);
+
+export { MemoizedProjectCard };
+export default MemoizedProjectCard;

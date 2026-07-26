@@ -91,6 +91,7 @@ export interface FooterLink {
   label: string;
   href: string;
   icon?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
 export interface FooterSection {
@@ -142,4 +143,14 @@ export interface UIStrings {
       viewProject: string;
     };
   };
+}
+
+
+export interface ExperienceItemProps {
+  position: 'left' | 'right';
+  title: string;
+  company: string;
+  description: string;
+  timeline: string;
+  index: number;
 }

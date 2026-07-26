@@ -1,5 +1,20 @@
 import { NavItem, ProjectItem, ExperienceItem, FormField, ContactInfo, SocialLink, HeroData, StatItem, ProjectRevealHeader, UIStrings, FooterSection, FooterLink } from "./interfaces";
 
+
+export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+export const BRAND_NAME="SDE"
+
+
+export const MY_URLS={
+  GITHUB_URL:"https://github.com/kigra58",
+  LINKEDIN_URL:"https://www.linkedin.com/in/krishna-gautam-5486081b1/",
+  EMAIL:"krishna.gautam5899@gmail.com",
+  RESUME:"https://drive.google.com/file/d/1eZT78gyzCHDXWVfQhT9tE7PPl2HjUlzb/view?usp=drivesdk",
+  NAME:"Krishna Gautam",
+  EXPERIENCE:"4+ years of experience",
+  PROFILE:"Software Engineer"
+}
+
 export const NAVIGATION_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about', isActive: true },
@@ -55,56 +70,171 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       'Vector embeddings for improved context'
     ],
     techStack: ['LangChain', 'Python', 'LLMs', 'Vector DB', 'PostgreSQL', 'REST APIs', 'WebSocket', 'OpenAI', 'AWS', 'Streaming'],
-    image: 'https://images.unsplash.com/photo-1531297483765-98a748215c6b?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
     link: '#'
-  }
+  },
+  {
+    category: 'Cloud Infrastructure',
+    title: 'Cloud-Native Microservices Platform',
+    timeline: '2023 - Cloud Architecture',
+    hasBorder: true,
+    description: 'Built scalable microservices architecture using Kubernetes and Docker. Implemented auto-scaling, load balancing, and service mesh for high availability.',
+    features: [
+      '95.9% uptime with auto-scaling policies',
+      'Reduced deployment time by 70% with CI/CD',
+      'Implemented service mesh for inter-service communication',
+      'Real-time monitoring and alerting system'
+    ],
+    techStack: ['Kubernetes', 'Docker', 'AWS EKS', 'Istio', 'Prometheus', 'Grafana', 'Jenkins', 'Terraform', 'Go', 'gRPC'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Full-Stack',
+    title: 'Real-Time Collaboration Platform',
+    timeline: '2023 - Full-Stack Development',
+    hasBorder: true,
+    description: 'Developed a real-time collaborative workspace with live editing, video conferencing, and project management features.',
+    features: [
+      'Real-time synchronization with WebSocket',
+      'Optimistic UI updates for instant feedback',
+      'Video conferencing with WebRTC',
+      'Advanced permission management system'
+    ],
+    techStack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'WebRTC', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'GraphQL'],
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'AI & Analytics',
+    title: 'Predictive Analytics Dashboard',
+    timeline: '2023 - AI/ML Development',
+    hasBorder: false,
+    description: 'Created an AI-powered analytics platform that predicts business trends and provides actionable insights using machine learning models.',
+    features: [
+      '90% accuracy in sales forecasting',
+      'Real-time data processing with streaming analytics',
+      'Interactive visualization with D3.js',
+      'Automated anomaly detection system'
+    ],
+    techStack: ['Python', 'TensorFlow', 'React', 'D3.js', 'Apache Kafka', 'Elasticsearch', 'MongoDB', 'AWS SageMaker', 'Docker', 'FastAPI'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Cloud & DevOps',
+    title: 'Serverless API Gateway',
+    timeline: '2022 - Cloud Development',
+    hasBorder: true,
+    description: 'Designed and implemented a serverless API gateway with automated deployment, monitoring, and cost optimization.',
+    features: [
+      '40% reduction in infrastructure costs',
+      'Auto-scaling based on traffic patterns',
+      'Automated testing and deployment pipelines',
+      'Real-time performance monitoring'
+    ],
+    techStack: ['AWS Lambda', 'API Gateway', 'Serverless Framework', 'Terraform', 'CircleCI', 'New Relic', 'Node.js', 'TypeScript', 'DynamoDB'],
+    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'AI & Computer Vision',
+    title: 'Intelligent Document Scanner',
+    timeline: '2023 - AI Development',
+    hasBorder: false,
+    description: 'Built an AI-powered document scanning app that automatically extracts text, categorizes documents, and provides smart search capabilities.',
+    features: [
+      'OCR with 98% accuracy rate',
+      'Automatic document categorization',
+      'Intelligent search across all documents',
+      'Cloud storage with encryption'
+    ],
+    techStack: ['Python', 'TensorFlow', 'OpenCV', 'Tesseract OCR', 'React Native', 'Firebase', 'Google Cloud Vision', 'Node.js', 'MongoDB'],
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Real Estate',
+    title: 'Property Review Platform',
+    timeline: '2022 - Full-Stack Development',
+    hasBorder: true,
+    description: 'Comprehensive property review platform connecting tenants and landlords with rating systems, rental management, and dispute resolution features.',
+    features: [
+      'Dual-sided rating system for tenants and landlords',
+      'Automated rent payment tracking and reminders',
+      'Property maintenance request management',
+      'Document storage with e-signature capabilities'
+    ],
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'REST APIs', 'Stripe', 'AWS S3', 'JWT Auth', 'Socket.io', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'Social & Dating',
+    title: 'Modern Dating App',
+    timeline: '2022 - Mobile Development',
+    hasBorder: true,
+    description: 'Location-based dating application with AI-powered matching, real-time chat, and advanced privacy features for meaningful connections.',
+    features: [
+      'AI-powered compatibility matching algorithm',
+      'Real-time messaging with read receipts',
+      'Location-based user discovery with radius filters',
+      'Video calling with end-to-end encryption'
+    ],
+    techStack: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Redis', 'JWT Auth', 'TensorFlow Lite', 'Twilio', 'AWS', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
+    link: '#'
+  },
+  {
+    category: 'AI & HR',
+    title: 'AI Hiring Manager',
+    timeline: '2023 - AI/ML Development',
+    hasBorder: true,
+    description: 'Intelligent hiring platform that uses AI to streamline recruitment processes, from resume screening to candidate matching and interview scheduling.',
+    features: [
+      'AI-powered candidate-job matching with 92% accuracy',
+      'Interview scheduling and calendar integration',
+      'Real-time analytics and diversity hiring insights',
+      'Question generation for interviewers using AI based on candidate resume and job description',
+      'Generate Feedback on candidate performance',
+      'Video interview with AI-powered analysis',
+      "AI-powered candidate assessment and evaluation"
+    ],
+    techStack: ['Microservices','OpenAI','NodeJs', 'React', 'MySql', 'REST APIs', 'WebSocket', 'AWS', 'Docker', 'Google Calendar API', 'ECR','ECS', 'Stripe','Assessment AI', 'Agora'],
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    link: '#'
+  },
 ];
 
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     position: 'left',
-    title: 'Senior Full-Stack Developer',
-    company: 'TechVentures Inc.',
-    description: 'Led development of microservices architecture using Node.js, React, and PostgreSQL. Implemented CI/CD pipelines reducing deployment time by 60%. Architected RESTful APIs serving 100K+ daily users.',
-    timeline: '2022 - PRESENT'
+    title: MY_URLS.PROFILE,
+    company: 'Biz4group LLC',
+    description: 'Developing and maintaining web applications using React, Node.js, and TypeScript. Creating RESTful APIs and implementing responsive user interfaces. Collaborating with cross-functional teams to deliver high-quality software solutions.',
+    timeline: '2022 - Present'
   },
   {
     position: 'right',
-    title: 'Full-Stack Engineer',
-    company: 'Digital Dynamics',
-    description: 'Built scalable e-commerce platforms with Next.js, TypeScript, and MongoDB. Developed real-time features using WebSocket and Redis. Optimized database queries improving performance by 45%.',
-    timeline: '2020 - 2022'
-  },
-  {
-    position: 'left',
-    title: 'Frontend Developer',
-    company: 'CloudScale Solutions',
-    description: 'Created responsive web applications using React, Vue.js, and modern CSS. Implemented state management with Redux and Vuex. Collaborated with UX team to enhance user experience.',
-    timeline: '2018 - 2020'
-  },
-  {
-    position: 'right',
-    title: 'Junior Web Developer',
-    company: 'StartUp Hub',
-    description: 'Developed and maintained client websites using HTML5, CSS3, and JavaScript. Integrated third-party APIs and payment gateways. Participated in agile development processes.',
-    timeline: '2017 - 2018'
+    title: 'FullStack Developer',
+    company: 'LetsGrowMore Internship',
+    description: 'Built full-stack web applications using React, Node.js, and MongoDB. Implemented user authentication and authorization systems. Developed RESTful APIs and integrated third-party services. Created responsive UI components with modern CSS frameworks.',
+    timeline: '2021 - 2021'
   }
 ];
 
-
-
 export const contactInfo: ContactInfo[] = [
-    {
-      icon: 'mail',
-      label: 'Email Me',
-      value: 'studio@curated.exhibit'
-    },
-    {
-      icon: 'location_on',
-      label: 'Location',
-      value: 'Brooklyn, New York'
-    }
-  ];
+  {
+    icon: 'mail',
+    label: 'Email Me',
+    value:  MY_URLS.EMAIL
+  },
+  {
+    icon: 'location_on',
+    label: 'Location',
+    value: 'Jaipur India'
+  }
+];
 
 export const socialLinks: SocialLink[] = [
     { icon: 'share', href: '#' },
@@ -134,32 +264,34 @@ export const FORM_FIELDS: FormField[] = [
   }
 ];
 
+
+
 export const HERO_DATA: HeroData = {
   badge: "Available for new opportunities",
-  title: "Hi, I'm Alex Rivera, a Senior ",
-  subtitle: "Product Designer",
-  description: "I specialize in crafting high-end digital experiences that bridge the gap between human emotion and technological precision. My approach focuses on editorial aesthetics and functional clarity.",
+  title: "Hi, I'm "+MY_URLS.NAME,
+  subtitle: MY_URLS.PROFILE,
+  description: MY_URLS.PROFILE+" with " + MY_URLS.EXPERIENCE + " building scalable full-stack and AI-driven applications. Expertise in JavaScript/TypeScript, React, Node.js, cloud-native architectures, and LLM-based systems. Proven ability to design microservices, integrate payment gateways, and deploy production systems using AWS, GCP, Docker, Kubernetes, and CI/CD pipelines. Successfully delivered enterprise-level e-commerce platforms with 40% performance improvements, AI-powered fitness applications with personalized recommendations, and real-time data processing systems. Led cross-functional teams through complete software development lifecycles, from architecture design to production deployment and maintenance.",
   buttons: [
     { text: "View Projects", variant: "primary", href: "/projects" },
     { text: "Contact Me", variant: "secondary", href: "/contact" }
   ],
   profileImage: {
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPvCunqKnPOrFU6nflBHhtb0qwLtt7RMhjC-mL03aIZ8Xi2yG4kT7vjGsYoUHsCKYC_QkqvCYpMyAomGrERbzaxVYkHnti74LBG0rz9hm-w3Gdb1yFH3cbRFImVkSIU5Zi9bXijoEhbZ8_wyCUiGELLPKYiGxpRQBYzYy86kI_ZI0FVTA1nSSsC9q9eOExlresUCkmtzLVbYTgsTK_M1wLFsbFdP5wblk7wQ6XBFe0tCpsxK29Np-heGvlnQ-BDKgrFn6w3CuQ-mk",
-    alt: "Alex Rivera profile"
+    alt: MY_URLS.NAME+" profile"
   }
 };
 
 export const STATS_DATA: StatItem[] = [
   {
     title: "Building intelligent solutions with cutting-edge AI technology.",
-    value: "5+",
+    value: MY_URLS.EXPERIENCE,
     description: "Years of Full Stack AI Development",
     variant: "featured",
     span: "md:col-span-2"
   },
   {
     title: "",
-    value: "100+",
+    value: "10+",
     description: "AI Models Deployed",
     variant: "primary"
   },
@@ -176,10 +308,16 @@ export const PROJECT_REVEAL_HEADER: ProjectRevealHeader = {
   badge: "Selected Archives",
   title: "The Exhibition",
   cta: {
-    text: "View Portfolio",
+    text: "View Profile",
     href: "#",
     icon: "arrow_forward"
   }
+};
+
+export const EXPERIENCE_HEADER = {
+  badge: "Professional Journey",
+  title: "Experience.",
+  description: "A journey through full-stack development, from building responsive interfaces to architecting scalable backend systems."
 };
 
 export const SKILLS_DATA = [
@@ -188,7 +326,7 @@ export const SKILLS_DATA = [
     description: "Core programming languages for full-stack development and AI applications.",
     icon: "code",
     variant: "primary" as const,
-    tags: ["JavaScript", "TypeScript", "Python"],
+    tags: ["JavaScript", "TypeScript", "Python","C++","GO"],
     gridSize: { md: "md:col-span-2", lg: "lg:col-span-3" },
     category: "core"
   },
@@ -224,7 +362,7 @@ export const SKILLS_DATA = [
     description: "Cloud platforms and deployment tools for modern application infrastructure.",
     icon: "cloud",
     variant: "border-slate" as const,
-    tags: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"],
+    tags: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Monitoring", "Alerting"],
     gridSize: { md: "md:col-span-2", lg: "lg:col-span-3" },
     category: "devops"
   },
@@ -240,14 +378,13 @@ export const SKILLS_DATA = [
 ];
 
 
-export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
 
 export const THEME={
   DARK:"dark",
   LIGHT:"light"
 }
 
-export const BRAND_NAME="SDE"
+
 
 export const BIO_DATA = {
   badge: "Full Stack AI Engineer",
@@ -367,11 +504,11 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Resources",
     links: [
-      { label: "GitHub", href: "https://github.com", icon: "code" },
-      { label: "LinkedIn", href: "https://linkedin.com", icon: "work" },
-      { label: "Portfolio", href: "#projects", icon: "web" },
-      { label: "Resume", href: "#resume", icon: "description" },
-      { label: "Blog", href: "#blog", icon: "article" }
+      { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code", target: "_blank" },
+      { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work", target: "_blank" },
+      { label: "Resume", href: MY_URLS.RESUME, icon: "description", target: "_blank" },
+      // { label: "Portfolio", href: "#projects", icon: "web" },
+      // { label: "Blog", href: "#blog", icon: "article" }
     ]
   },
   {
@@ -385,18 +522,63 @@ export const FOOTER_SECTIONS: FooterSection[] = [
     ]
   },
   {
-    title: "Legal",
+    title: "Developer links",
     links: [
-      { label: "Privacy Policy", href: "#privacy" },
-      { label: "Terms of Service", href: "#terms" },
-      { label: "Cookie Policy", href: "#cookies" }
+      { label: "Skills", href: "https://skills.sh/", target: "_blank" },
+      { label: "Compiler", href: "https://www.programiz.com/javascript/online-compiler/", target: "_blank" },
+      // { label: "Terms of Service", href: "#terms" },
+      // { label: "Cookie Policy", href: "#cookies" }
     ]
   }
 ];
 
 export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
-  { label: "GitHub", href: "https://github.com/kigra58", icon: "code" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/krishna-gautam-5486081b1/", icon: "work" },
-  // { label: "Twitter", href: "https://twitter.com", icon: "alternate_email" },
-  { label: "Email", href: "mailto:krishna.gautam5899@gmail.com", icon: "mail" }
+  { label: "GitHub", href: MY_URLS.GITHUB_URL, icon: "code", target: "_blank" },
+  { label: "LinkedIn", href: MY_URLS.LINKEDIN_URL, icon: "work", target: "_blank" },
+  { label: "Email", href: "mailto:" + MY_URLS.EMAIL, icon: "mail" }
+  // { label: "Twitter", href: "https://twitter.com", icon: "alternate_email", target: "_blank" },
 ];
+
+export const PORTFOLIO_HERO = {
+  badge: "Portfolio",
+  title: "Featured<br/>Projects.",
+  description: "A curated collection of full-stack applications and AI-powered solutions built with modern technologies and architectural best practices.",
+  stats: {
+    count: PROJECT_ITEMS.length,
+    label: "Completed Projects"
+  }
+};
+
+
+export const UIText = {
+  TRENDING_LABEL: 'GitHub Trending',
+  TRENDING_EMOJI: 'ð',
+  TITLE: '#1 Repository of the Day',
+  VIEW_ON_GITHUB: 'View on GitHub',
+  LOADING: 'Loading trending repository...',
+  ERROR: 'Unable to load trending repository. Please try again later.',
+  STARS_LABEL: 'stars',
+} as const;
+
+
+export const LABELS: Record<string, string> = {
+      'all': 'All Skills',
+      'core': 'Languages',
+      'frontend': 'Frontend',
+      'backend': 'Backend',
+      'database': 'Database',
+      'devops': 'DevOps & Cloud',
+      'ai': 'AI / ML'
+    };
+
+export const GITHUB_API_CONFIG = {
+  BASE_URL: 'https://api.github.com',
+  SEARCH_REPOS: '/search/repositories',
+  TRENDING_PARAMS: {
+    SORT: 'stars',
+    ORDER: 'desc',
+    PER_PAGE: 5,
+    CREATED_DAYS_AGO: 7
+  },
+  OPEN_GRAPH_BASE: 'https://opengraph.githubassets.com/1'
+};

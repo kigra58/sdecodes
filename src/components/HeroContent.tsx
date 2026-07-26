@@ -3,8 +3,8 @@ import { HERO_DATA } from '../utils/constant';
 const HeroContent = () => {
   return (
     <section className="max-w-screen-2xl mx-auto px-6 md:px-12">
-      <div className="flex flex-col lg:flex-row items-center gap-16 min-h-[716px]">
-        <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
+      <div className="flex flex-col lg:flex-row items-center gap-12 min-h-[600px]">
+        <div className="flex-1 space-y-6 text-center lg:text-left order-2 lg:order-1">
           <div className="inline-block bg-primary-fixed px-4 py-1.5 rounded-full">
             <span className="text-on-primary-fixed text-xs font-semibold tracking-widest uppercase">{HERO_DATA.badge}</span>
           </div>
