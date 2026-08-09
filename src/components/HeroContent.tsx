@@ -11,9 +11,15 @@ const HeroContent = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.1] text-primary">
             {HERO_DATA.title}<span className="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">{HERO_DATA.subtitle}</span>
           </h1>
-          <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-            {HERO_DATA.description}
-          </p>
+          <div className="max-w-2xl space-y-4 text-on-surface-variant">
+            {HERO_DATA.description
+              .match(/[^.!?]+[.!?]+/g)
+              ?.map((sentence, index) => (
+                <p key={index} className="text-lg md:text-xl leading-relaxed break-words whitespace-pre-line">
+                  {sentence.trim()}
+                </p>
+              ))}
+          </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
             {/* {HERO_DATA.buttons.map((button, index) => (
               <button
