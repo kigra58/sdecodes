@@ -1,55 +1,55 @@
-name: Deploy to S3
+# name: Deploy to S3
 
-on:
-  push:
-    branches:
-      - deploy  # triggers only when you push to 'deploy' branch
+# on:
+#   push:
+#     branches:
+#       - deploy  # triggers only when you push to 'deploy' branch
 
-jobs:
-  deploy:
-    name: Build and Deploy to S3
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     name: Build and Deploy to S3
+#     runs-on: ubuntu-latest
 
-    steps:
-      # Step 1: Checkout code
-      - name: Checkout repository
-        uses: actions/checkout@v4
+#     steps:
+#       # Step 1: Checkout code
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      # Step 2: Setup Node
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+#       # Step 2: Setup Node
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 18
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm ci
+#       # Step 3: Install dependencies
+#       - name: Install dependencies
+#         run: npm ci
 
-      # Step 4: Build project using env from GitHub Secrets
-      - name: Build project
-        run: npm run build:dev
-        env:
-          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL_DEV }}
+#       # Step 4: Build project using env from GitHub Secrets
+#       - name: Build project
+#         run: npm run build:dev
+#         env:
+#           VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL_DEV }}
 
-      # Step 5: Deploy build output to S3 bucket
-      - name: Deploy to S3
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: dist  # ⚠️ change to 'build' if your output folder is different
+#       # Step 5: Deploy build output to S3 bucket
+#       - name: Deploy to S3
+#         uses: jakejarvis/s3-sync-action@v0.5.1
+#         with:
+#           args: --delete
+#         env:
+#           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           AWS_REGION: ${{ secrets.AWS_REGION }}
+#           SOURCE_DIR: dist  # ⚠️ change to 'build' if your output folder is different
 
-      # Step 6: Optional - Invalidate CloudFront cache
-      - name: Invalidate CloudFront cache
-        if: always()
-        uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
-          PATHS: "/*"
+#       # Step 6: Optional - Invalidate CloudFront cache
+#       - name: Invalidate CloudFront cache
+#         if: always()
+#         uses: chetan/invalidate-cloudfront-action@v2
+#         env:
+#           AWS_REGION: ${{ secrets.AWS_REGION }}
+#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
+#           PATHS: "/*"
